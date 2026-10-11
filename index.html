@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Weather Dashboard</p>
+          <h1 id="city-name">Loading...</h1>
+        </div>
+
+        <div class="controls">
+          <div class="unit-toggle" aria-label="Temperature unit toggle">
+            <button class="unit active" data-unit="c">°C</button>
+            <button class="unit" data-unit="f">°F</button>
+          </div>
+          <button id="location-btn" class="secondary-btn">Use my location</button>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="card current-card">
+          <div class="current-main">
+            <div>
+              <p class="label">Current weather</p>
+              <div class="temperature-row">
+                <span id="current-temp" class="temp-value">--</span>
+                <span id="current-unit" class="temp-unit">°C</span>
+              </div>
+            </div>
+
+            <div class="weather-condition">
+              <div id="weather-icon" class="weather-icon" aria-label="Weather icon">☀️</div>
+              <p id="weather-summary">--</p>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-item">
+              <span>Feels like</span>
+              <strong id="feels-like">--</strong>
+            </div>
+            <div class="meta-item">
+              <span>Humidity</span>
+              <strong id="humidity">--</strong>
+            </div>
+            <div class="meta-item">
+              <span>Wind</span>
+              <strong id="wind-speed">--</strong>
+            </div>
+            <div class="meta-item">
+              <span>Sunrise</span>
+              <strong id="sunrise">--</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="card search-card">
+          <form id="search-form" class="search-form">
+            <input
+              id="city-input"
+              type="text"
+              placeholder="Search city..."
+              aria-label="Search city"
+            />
+            <button type="submit" class="primary-btn">Search</button>
+          </form>
+
+          <div class="favorites-row">
+            <span class="favorites-label">Favorites</span>
+            <div id="favorite-list" class="favorite-list"></div>
+          </div>
+        </section>
+
+        <section class="card forecast-card">
+          <div class="section-header">
+            <h2>5-Day Forecast</h2>
+          </div>
+          <div id="forecast-list" class="forecast-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
